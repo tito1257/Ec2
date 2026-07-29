@@ -9,7 +9,7 @@ resource "aws_instance" "this"{
 }
 
 resource "aws_security_group" "sg"{
- name = var.security_group-name
+ name = var.security_group_name
   description = var.security_group_description
  dynamic "ingress"{
     for_each = var.security_group_inbound_rules
