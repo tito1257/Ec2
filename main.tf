@@ -2,7 +2,8 @@ resource "aws_instance" "this"{
  ami = var.ami_id
  instance_type = var.instance_type
  availability_zone = var.availability_zone
- 
+ security_description = "Allow SSH,HTTP,HTTPS Ports"
+
  tags = var.tags
  vpc_security_group_ids = [aws_security_group.sg.id]
 }
