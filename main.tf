@@ -1,12 +1,12 @@
 resource "aws_instance" "this"{
  ami = var.ami_id
  instance_type = var.instance_type
- availability_zone var.availability_zone
+ availability_zone = var.availability_zone
  tags = var.tags
  vpc_security_group_ids = [aws_security_group.sg.id]
 }
 
-esource "aws_security_group" "sg"{
+resource "aws_security_group" "sg"{
  name = var.security_group-name
   description = var.security_group_description
  dynamic "ingress"{
